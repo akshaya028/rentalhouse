@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+
+</script>
+</head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href={{url_for('static',filename='mainstyle.css',v=0.01)}}>
+<body>
+<header id="header">
+			<div id="logo">
+				<h1>Home</h1>
+				<label class="logoutLblPos">
+					<img src="static/logout.png" onclick="window.location.href='/logout'" height="60%" width="60%" id="img">
+  				</label>
+			</div>
+</header>
+	<nav id="nav">
+			<div class="innertube">
+				<h2>Customer</h2>
+				<ul>
+					<li><a href="/homepage">Home</a></li>
+				</ul>
+			</div>
+</nav>
+<main>
+<form action="/searchhouse" method="post">
+<div class="tube">
+	<div class="form-style-2">
+		<div class="form-style-2-heading">Search House</h2></div>
+			<label><span> <font color="red"></font></span>
+			<input type="text" class="input-field" name="search" id="search"  onkeyup="this.value=this.value.substring(0,1).toUpperCase() + this.value.substring(1)" placeholder="Search using area"required autofocus></label>
+			<div class="button">
+				<label><input type="submit" value="Search" /></label>
+			</div>
+</div>
+</div>		
+<table id="tblData" border="1" align="center" cellspacing="15" bordercolor="black" class="raw-table raw-table-highlight-all" cellpadding="15">
+<tr>
+	<th><b><center><font color="blue" size="4">Name</font></center></b></th>
+	<th><b><center><font color="blue" size="4">MobileNumber</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Descrption</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Prefered type</font></center></b></th>
+	<th><b><center><font color="blue" size="4">View details</font></center></b></th>
+</tr>
+{% if cont %}
+{% for i in cont %}
+<tr>
+	<th><b><center><font color="green" size="4">{{i.ownername}}</font></center></b></th>
+	<th><b><center><font color="green" size="4">{{i.contact_no}}</font></center></b></th>
+	<th><b><center><font color="green" size="4">{{i.description}}</font></center></b></th>
+	<th><b><center><font color="green" size="4">{{i.expectations}}</font></center></b></th>
+	<th><b><center><font color="green" size="4">
+	<input type="submit"  class="new"  value="View details" onclick="window.location.href='{{url_for('viewdetails',id=i.id)}}'" /></font></center></b></th>
+</tr>
+{% endfor %}
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+</head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href={{url_for('static',filename='mainstyle.css',v=0.01)}}>
+{% if msg %}
+<script>
+ var m='{{msg}}'
+	alert(m)
+</script>
+{% endif %}
+<form action="/homepage" method="POST">
+<header id="header">
+			<div id="logo">
+				<h1>Home</h1>
+				<label class="logoutLblPos">
+					<img src="static/logout.png" onclick="window.location.href='/logout'" height="60%" width="60%" id="img">
+  				</label>
+				{%if cont %}
+					<h3><font color="white">Welcome,{{cont.fname}}</font></h3>
+				{% endif %}
+				
+			</div>
+</header>
+	<nav id="nav">
+			<div class="innertube">
+				<h2>Customer</h2>
+				<ul>
+					<li><a href="/profile">View profile</a></li>
+					<li><a href="/searchhouse">Search Houses</a></li>
+					<li><a href="/custrequest">Requests</a></li>
+				</ul>
+			</div>
+</nav>

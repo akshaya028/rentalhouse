@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+
+</script>
+</head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href={{url_for('static',filename='mainstyle.css',v=0.01)}}>
+<body>
+<header id="header">
+			<div id="logo">
+				<h1>Home</h1>
+				<label class="logoutLblPos">
+					<img src="static/logout.png" onclick="window.location.href='/logout'" height="60%" width="60%" id="img">
+  				</label>
+			</div>
+</header>
+	<nav id="nav">
+			<div class="innertube">
+				<h2>Customer</h2>
+				<ul>
+					<li><a href="/homepage">Home</a></li>
+				</ul>
+			</div>
+</nav>
+<main>	
+<br><br><br>	
+<div class="tube">
+<table id="tblData" border="1" align="center" cellspacing="15" bordercolor="black" class="raw-table raw-table-highlight-all" cellpadding="15">
+<tr>
+	<th><b><center><font color="blue" size="4">Request Id</font></center></b></th>
+	<th><b><center><font color="blue" size="4">House Id</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Name</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Mobile Number</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Email Id</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Address</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Job</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Age</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Family details</font></center></b></th>
+	<th><b><center><font color="blue" size="4">Status of Request</font></center></b></th>
+</tr>
+{% if cont %}
+{% for i in cont %}
+<tr>
+	<th><b><center><font color="black" size="4">{{i.req_id}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.h_id}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.name}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.contact_no}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.email}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.address}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.job}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.age}}</font></center></b></th>
+	<th><b><center><font color="black" size="4">{{i.members}}</font></center></b></th>
+	<th><b><center><font color="red" size="4">{{i.status}}</font></center></b></th>
+	</tr>
+{% endfor %}
+{% endif %}
+</table>
+</div>
+</body>
+</html>

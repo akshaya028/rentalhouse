@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+
+</script>
+</head>
+<meta charset="ISO-8859-1">
+<title>Add details</title>
+<link rel="stylesheet" type="text/css" href="static/mainstyle.css">
+<body>
+<header id="header">
+			<div id="logo">
+				<h1>Home</h1>
+				<label class="logoutLblPos">
+			<img src="static/logout.png" onclick="window.location.href='/logout'" height="60%" width="60%" id="img">
+  </label>
+			</div>
+</header>
+	<nav id="nav">
+			<div class="innertube">
+				<h2>{{cont.login}}</h2>
+				<ul>
+					<li><a href="/homepage">Home</a></li>	
+				</ul>
+			</div>
+</nav>
+		
+           <main>
+<form action="/adddetails" method="POST">
+<div class="tube">
+<div class="form-style-2">
+
+<div class="form-style-2-heading">Add  house details</h2></div>
+
+<label><span>Name:<font color="red">*</font></span>
+<input type="text" class="input-field" name="fname" id="fname" value= {{cont.fname}} required autofocus  readonly="readonly"></label>
+
+<label><span>Mobile Number:<font color="red">*</font></span>
+<input type="number" class="input-field" name="mobilenumber" id="mobilenumber" value= {{cont.mobile_no}} required autofocus  readonly="readonly"></label>
+
+<label><span> Email Id:<font color="red">*</font></span>
+<input type="email" class="input-field" name="email" id="email" value= {{cont.email}} required autofocus readonly="readonly"></label>
+
+<label><span>Address:<font color="red">*</font></span>
+<input type="text" class="input-field" name="address" id="address" onkeyup="this.value=this.value.substring(0,1).toUpperCase() + this.value.substring(1)" required autofocus></label>
+
+<label><span>Area:<font color="red">*</font></span>
+<input type="text" class="input-field" name="location" id="location" onkeyup="this.value=this.value.substring(0,1).toUpperCase() + this.value.substring(1)" required autofocus></label>
+
+<label><span>Pincode:<font color="red">*</font></span>
+<input type="number" class="input-field" name="pincode" id="pincode"  required autofocus></label>
+
+
+<label><span>Description: <font color="red">*</font></span>
+<input type="text"  class="input-field" name="desc" id="desc" style=" height: 80px; width:444px; margin-bottom:20px;" required autofocus/></lable>
+
+<label><span> Rent:<font color="red">*</font></span>
+<input type="text" class="input-field" name="rent" id="rent" required autofocus></label>
+
+<label><span> Advance:<font color="red">*</font></span>
+<input type="text" class="input-field" name="advance" id="advance" required autofocus></label>
+
+<label><span>Expectations:<font color="red" size="2">*</font></span>
+    <select  name="expectation" class="select-field">
+		<option value="no expectations">No expectation</option>
+		<option value="family">Family is preferred</option>
+		<option value="bachelors">Bachelors are preferred</option>
+	    </select></label>
+
+<div class="button">
+<input type="submit" value="Add"/></label></div>
+</div>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DisplayPage</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href={{url_for('static',filename='viewprofile.css')}}>
+<form action="/viewprofile" name='form'>
+<header id="header">
+			<div id="logo">
+				<h1>Home</h1>
+			</div>
+</header>
+
+<nav id="nav">
+			<div class="innertube">
+				<h2>{{cont.login}}</h2>
+				<ul>
+					<li><a href="/homepage">Home</a></li>
+					<li><a href="/editprofile">Edit profile</a></li>	
+					<li><a href="/request">Requests</a></li>
+				</ul>
+			</div>
+		</nav>
+<main>
+<div class="tube">
+<div class="container">
+	<br>
+      <h1>
+      <div class="profile-name">
+       <span style="font-size:120%; color:#ffff80;"> {{cont.fname+" "+cont.lname}} </div></h1>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;">  Mobile Number -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.mobile_no}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Email-</span>
+       <span style="font-size:120%; color:#99ffff;"> {{cont.email}}
+      </span>
+      <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Address   -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.address}}
+      </span> <br>
+       </h3>
+ </div>
+ </div>
+    </form>
+    </main>		
+</body>
+</html>

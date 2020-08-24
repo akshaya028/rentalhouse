@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DisplayPage</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href={{url_for('static',filename='viewprofile.css',v=0.01)}}>
+
+<header id="header">
+			<div id="logo">
+				<h1>Home</h1>
+			</div>
+</header>
+
+<nav id="nav">
+			<div class="innertube">
+				<h2>Customer</h2>
+				<ul>
+					<li><a href="/homepage">Home</a></li>
+				</ul>
+			</div>
+		</nav>
+<main>
+<div class="tube">
+<div class="container">
+	<br>
+      <h1>
+      <div class="profile-name">
+       <span style="font-size:120%; color:#ffff80;"> {{cont.ownername}} </div></h1>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;">  Mobile Number -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.contact_no}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Email-</span>
+       <span style="font-size:120%; color:#99ffff;"> {{cont.email}}
+      </span>
+      <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Address   -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.address}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Pincode  -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.pincode}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Rent  -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.rent}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Advance  -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.advance}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;"> Description  -</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.description}}
+      </span> <br>
+       </h3>
+       <h3 class="about">
+      <span style="font-size:120%; color:#ffffff;">Expectation-</span>
+      <span style="font-size:120%; color:#99ffff;"> {{cont.expectations}}</span> <br>
+       </h3>
+       <div class="button">
+	<font><input type="submit" class="new"  value="Book House" onclick="window.location.href='{{url_for('custdetails',id=cont.id)}}'"/></font>
+	</div>
+ </div>
+ </div>
+ </main>
+</body>
+</html>

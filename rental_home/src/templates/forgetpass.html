@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="frame">
+    <div class="nav">
+      <ul class"links">
+        <li class="signin-active"><a class="btn">Forget Password</a></li>
+      </ul>
+    </div>
+    <div ng-app ng-init="checked = false">
+	<form class="form-signin" action="/forgetpass" method="post" name="form">
+          <label>Mobilenumber</label>
+          <input class="form-styling" type="number" name="mobilenumber"/>
+          <label>Security Question</label>
+          <select class="form-styling" name="question">
+		<option>Select Security Question</option>
+		<option value="fathername">what is your father's name?</option>
+		<option value="mothername">what is your mother's name?</option>
+		<option value="friendname">what is your friend's name?</option>
+		<option value="DOB">what is your DOB?</option>
+		</select>
+          <label> Security Answer</label>
+          <input class="form-styling" type="text" name="answer" onkeyup="this.value=this.value.substring(0,1).toUpperCase() + this.value.substring(1)"/>
+          <label>Password</label>
+          <input class="form-styling" type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+          <input type="submit" class="btn-signup" value="update"/>
+          
+        </form>
+      </div>
+ 
+  </div>
+</div>
+</body>
